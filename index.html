@@ -47,5 +47,12 @@
         </p>
     </div>
 </body>
+<script>
+  console.log("Testing backend connection...");
+  fetch("https://dental-clinic-backend.onrender.com/health")
+    .then(r => r.json())
+    .then(data => console.log("Backend response:", data));
+</script>
 
 </html>
+
