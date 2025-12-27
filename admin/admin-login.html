@@ -16,6 +16,7 @@
 </div>
 
 <script>
+    const API_BASE_URL = "https://dental-clinic-backend.onrender.com";
 function login() {
     const username = document.getElementById("user").value;
     const password = document.getElementById("pass").value;
@@ -25,7 +26,7 @@ function login() {
         return;
     }
 
-    fetch("/admin/login", {
+    fetch("https://dental-clinic-backend.onrender.com/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
