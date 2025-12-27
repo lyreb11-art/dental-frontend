@@ -34,7 +34,7 @@
     </div>
 
 <script>
-    const API_BASE_URL = "https://dental-clinic-backend.onrender.com";
+    const API_BASE_URL = "https://dental1-backend.onrender.com";
     // Check login
     const pid = localStorage.getItem("pid");
     if (!pid) {
@@ -78,7 +78,7 @@
 
         console.log("Sending request to /book-appointment...");
 
-        fetch("https://dental-clinic-backend.onrender.com/book-appointment", {
+        fetch("https://dental1-backend.onrender.com/book-appointment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -131,7 +131,7 @@ function requestReport() {
 
     console.log("📋 Requesting report:", testName);
 
-    fetch("https://dental-clinic-backend.onrender.com/request-report", {
+    fetch("https://dental1-backend.onrender.com/request-report", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -162,7 +162,7 @@ function requestReport() {
 function loadReports() {
     console.log("📄 Loading reports...");
 
-    fetch("https://dental-clinic-backend.onrender.com/reports/" + pid)
+    fetch("https://dental1-backend.onrender.com/reports/" + pid)
     .then(response => {
         if (!response.ok) {
             throw new Error('HTTP ${response.status}');
