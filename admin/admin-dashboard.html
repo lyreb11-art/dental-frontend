@@ -31,7 +31,7 @@
 </div>
 
 <script>
-    const API_BASE_URL = "https://dental-clinic-backend.onrender.com";
+    const API_BASE_URL = "https://dental1-backend.onrender.com";
 // Check login
 if (!localStorage.getItem("admin")) {
     alert("Please login");
@@ -53,7 +53,7 @@ function logout() {
 function loadAppointments() {
     console.log("📅 Loading appointments...");
 
-    fetch("https://dental-clinic-backend.onrender.com/admin/appointments")
+    fetch("https://dental1-backend.onrender.com/admin/appointments")
     .then(response => response.json())
     .then(appointments => {
         const list = document.getElementById("appointmentsList");
@@ -178,7 +178,7 @@ function updateAppointmentStatus(appointmentId, newStatus) {
         return;
     }
 
-    fetch("https://dental-clinic-backend.onrender.com/admin/update-appointment-status", {
+    fetch("https://dental1-backend.onrender.com/admin/update-appointment-status", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -207,7 +207,7 @@ function updateAppointmentStatus(appointmentId, newStatus) {
 function loadRequests() {
     console.log("📄 Loading report requests...");
 
-    fetch("https://dental-clinic-backend.onrender.com/admin/report-requests")
+    fetch("https://dental1-backend.onrender.com/admin/report-requests")
     .then(response => {
         console.log("Response status:", response.status);
         if (!response.ok) {
@@ -359,7 +359,7 @@ function uploadReportForRequest(patientId, testName, requestId) {
     }
 
     // 1️⃣ Generate presigned upload URL
-    fetch("https://dental-clinic-backend.onrender.com/generate-upload-url", {
+    fetch("https://dental1-backend.onrender.com/generate-upload-url", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -382,7 +382,7 @@ function uploadReportForRequest(patientId, testName, requestId) {
     })
     .then(data => {
         // 3️⃣ Update DB record
-        return fetch("https://dental-clinic-backend.onrender.com/upload-report", {
+        return fetch("https://dental1-backend.onrender.com/upload-report", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -433,7 +433,7 @@ function uploadReport() {
     }
 
     // Get upload URL
-    fetch("https://dental-clinic-backend.onrender.com/generate-upload-url", {
+    fetch("https://dental1-backend.onrender.com/generate-upload-url", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -456,7 +456,7 @@ function uploadReport() {
     })
     .then(data => {
         // Save to database
-        return fetch("https://dental-clinic-backend.onrender.com/upload-report", {
+        return fetch("https://dental1-backend.onrender.com/upload-report", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
