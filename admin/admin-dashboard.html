@@ -31,6 +31,7 @@
 </div>
 
 <script>
+    const API_BASE_URL = "https://dental-clinic-backend.onrender.com";
 // Check login
 if (!localStorage.getItem("admin")) {
     alert("Please login");
@@ -206,7 +207,7 @@ function updateAppointmentStatus(appointmentId, newStatus) {
 function loadRequests() {
     console.log("📄 Loading report requests...");
 
-    fetch("/admin/report-requests")
+    fetch("https://dental-clinic-backend.onrender.com/admin/report-requests")
     .then(response => {
         console.log("Response status:", response.status);
         if (!response.ok) {
